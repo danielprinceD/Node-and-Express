@@ -10,8 +10,8 @@ class Class {
 }
 const myClass = new Class();
 var myEmitter = new EventEmitter();
-myEmitter.on("response", () => {
-  console.log("Hi " + myClass.obj.name);
+myEmitter.on("", (name) => {
+  console.log("Hi " + myClass.obj.name + `${name}`);
 });
 
 createServer((req, res) => {
@@ -20,4 +20,4 @@ createServer((req, res) => {
   console.log("Running Server");
 });
 
-myEmitter.emit("response");
+myEmitter.emit("", "prince");
