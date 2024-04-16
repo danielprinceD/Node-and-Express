@@ -2,6 +2,9 @@ const express = require("express");
 const path = require("path");
 const app = express();
 
+//Setup Static and middleware
+app.use(express.static("./HTML"));
+
 const homepage = path.resolve(__dirname, "./HTML/demo.html");
 
 // app.get("/", (req, res) => {
@@ -18,4 +21,4 @@ app.all("*", (req, res) => {
   res.status(404).send("Not Found");
 });
 
-app.listen(3000, () => {});
+app.listen(3000);
